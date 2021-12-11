@@ -1,0 +1,135 @@
+﻿@{
+	Layout = null;
+}
+@*@model TestWeb.Models.Order*@
+@*@model TestWeb.Models.OrderList*@
+@*@model List<TestWeb.Models.Order>*@
+@model IEnumerable<TestWeb.Models.Order>
+<!DOCTYPE html>
+
+<html>
+<head>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+	<meta name="viewport" content="width=device-width" />
+	<link href="~/Content/ShoppingCart.css" rel="stylesheet" type="text/css " runat="server" />
+	<title></title>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="Home">@Html.ActionLink("Home", "LoggedInAfter", "Home")</li>
+					<li class="IndexTab">@Html.ActionLink("ShoppingCart", "ShoppingCart", "Home")</li>
+					<li class="AboutTab">@Html.ActionLink("Payment", "Payment", "Home")</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="Start" class="container">
+		@*<button type="submit" name="btn" value="btn1" id="Login" class="btn btn-default" onclick="addRow()">Add</button>*@
+		@*<button name="btn1" value="btn2" id="Test" onclick="Test()">test</button>*@
+
+
+
+
+
+	</div>
+
+	@foreach (var item in Model)
+	{
+		int count = 0;
+		if (count == 0)
+		{
+			//<h2 onload="Test()">@item.Item</h2>
+			//	<h2 onload="Test()">@item.Price</h2>
+			//	<h2 onload="Test()">@item.Quantity</h2>
+			//	<h2 onload="Test()">@item.Total</h2>
+			<img class="itemsPic" height="182" width="182" src=@Url.Content("~/Image/"+item.pic+".jpg")>
+			<div class="inner1">
+
+				<table class="BagData">
+					<colgroup>
+						<col style="width:40%">
+						<col style="width:30%">
+						<col style="width:30%">
+					</colgroup>
+
+					<tr class="dataRows">
+						<th>Item</th>
+						<th>Price</th>
+						<th>Quantity</th>
+					</tr>
+					<tr>
+						<td>@item.Item</td>
+						<td>@item.Price</td>
+						<td>@item.Quantity</td>
+
+					</tr>
+				</table>
+				<label>@item.Total</label>
+
+			</div>
+			<div></div>
+		}
+
+		count++;
+
+	}
+	<script>
+		function Test() {
+			alert("start");
+			const div = document.createElement('div');
+			var total = 0.0;
+			div.className = 'row';
+			var bags = @Html.Raw(Json.Encode(Model));
+			//alert(bags.length.ToString());
+			for (var i = 0; i < bags.length; i++) {
+				var bags = bags[i];
+				div.innerHTML = `
+		<img class="itemsPic" src=@Url.Content("~/Image/Bag1.jpg")>
+			<div class="inner1">
+					<table style="width:100%" >
+						<tr>
+							<th>Item</th>
+							<th>Price</th>
+							<th>Quantity</th>
+						</tr>
+						<tr>
+							<td>`+bags.Item+`</td>
+							<td>`+bags.Price+`</td>
+							<td>`+bags.Quantity+`</td>
+
+						</tr>
+						</table>
+				<label>`+bags.Total+`</label>
+					</div>`;
+
+				alert(`2dfdff` + bags.Item+` why`);
+			document.getElementById('Start').appendChild(div);
+			}
+
+						}
+
+	</script>
+	<script>
+
+		function addRow() {
+			alert("Loop");
+			const div = document.createElement('div');
+			var total = 0.0;
+			div.className = 'row';
+
+		}
+	</script>
+</body>
+</html>

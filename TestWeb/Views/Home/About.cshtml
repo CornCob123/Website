@@ -1,0 +1,38 @@
+﻿@{
+	ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+@*
+	Add <link href="~/Content/AboutStyleSheet.css" rel="stylesheet" type="text/css " media="screen" runat="server" /> for pathing to CSS file
+	Add runat="server" to the head tag to enable CSS
+	Add runat="server" to the linkhref tag to enable CSS
+*@
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<meta name="viewport" content="width=device-width" />
+	<title>About Me</title>
+	<link href="~/Content/AboutStyleSheet.css" rel="stylesheet" type="text/css " runat="server" />
+
+</head>
+<body>
+	<div class="container">
+		<section>
+			<b> Name: Leon Sia Wei Lon</b>
+		</section>
+
+		<img src="~/Image/ICEdit9.jpg" alt="Photo" height="150" width="250">
+
+	</div>
+
+	<div class="Desc" runat="server">
+		<text>
+			Studying programming and looking to be a programmer in future. Currently in UOL SIM final year with only project module left and no more lessons in the timetable.Schedule is open to work full time.
+			My interest is in programming and I have done assembly code and have a strong interest in reversing.I have made projects for myself in my free time. I had experience with C # since polytechnic days and possess java knowledge as well as python
+			Some of the projects I have done for myself are an android studio stock app that links articles and summarizes text.Also a photo cropping and editing cartooniser application written in java.
+		</text>
+	</div>
+</body>
+</html>

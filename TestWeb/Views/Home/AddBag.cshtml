@@ -1,0 +1,56 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+@model TestWeb.Models.Bag
+<html>
+<head>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+	<meta name="viewport" content="width=device-width" />
+	<title></title>
+</head>
+<body>
+	<form id="login" action="@Url.Action("AddBag","Home")" method="post">
+
+		<div class="form-group">
+
+			@Html.Label("BagId")
+			@Html.EditorFor(Model => Model.BagId, new { htmlAttributes = new { @class = "form-control" } })
+		</div>
+		<div class="form-group">
+			<label for="pwd">BagName:</label>
+			@Html.EditorFor(Model => Model.BagName, new { htmlAttributes = new { @class = "form-control" } })
+		</div>
+		<div class="form-group">
+			<label for="pwd">Price:</label>
+			@Html.EditorFor(Model => Model.Price, new { htmlAttributes = new { @class = "form-control" } })
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" name="remember"> Remember me</label>
+		</div>
+		<button type="submit" id="Login" class="btn btn-default" onclick="myFunction()">Submit</button>
+	</form>
+	<table style="font-family:Arial">
+
+		<tr>
+			<td>
+				@ViewBag.Message
+			</td>
+
+		</tr>
+		<tr>
+			<td>@Model.BagName</td>
+
+		</tr>
+
+		<tr>
+			<td>@Model.Price</td>
+
+
+
+
+	</table>
+</body>
+</html>

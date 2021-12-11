@@ -1,0 +1,77 @@
+﻿@{
+	ViewBag.Title = "Stock App";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+@*
+	Add <link href="~/Content/AboutStyleSheet.css" rel="stylesheet" type="text/css " media="screen" runat="server" /> for pathing to CSS file
+	Add runat="server" to the head tag to enable CSS
+	Add runat="server" to the linkhref tag to enable CSS
+*@
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<meta name="viewport" content="width=device-width" />
+	<title>About Me</title>
+	<link href="~/Content/StockAppStyleSheet.css" rel="stylesheet" type="text/css " runat="server" />
+
+</head>
+<body>
+	<div class="container">
+		<section>
+			<b> Stock App made in android studio</b>
+		</section>
+
+		<img src="~/Image/App3.jpg" alt="Photo" height="750" width="650">
+
+	</div>
+
+	<div class="Desc" runat="server">
+		<text>
+			The above app is made using android studio.Its main function is to track stock prices and also link articles
+			that are related to the stocks that the user follows.It has a simple summarising feature to simplify articles
+			for the user so that they can skim through and choose to read the full article if it catches their eye.
+		</text>
+	</div>
+
+	<img src="~/Image/App1.jpg" alt="Photo" height="750" width="650">
+
+	<div class="Desc1" runat="server">
+		<text>
+			The above is the start page of the app.When it is loaded it immediately displays the stocks of the 3 largest
+			stock prices that influence the market to some degree.If the price of the stock is higher than its price at
+			the last closing it will be placed in a green border.If the opposite is true and the stock price decreased then
+			it will be placed in a red border.
+		</text>
+	</div>
+
+	<img src="~/Image/App2.jpg" alt="Photo" height="750" width="650">
+
+	<div class="Desc2" runat="server">
+		<text>
+			Msft is the stock symbol for the company microsoft. This example enters MSFT in the stock search and then it
+			is added into a tracking list
+		</text>
+	</div>
+
+	<img src="~/Image/App3.jpg" alt="Photo" height="750" width="650">
+
+	<div class="Desc3" runat="server">
+		<text>
+			The price and name of the company will then be listed.Along with all news articles that concern microsoft are
+			linked and summarised and then placed in the app labelled with titles for the user to browse through.
+		</text>
+	</div>
+
+	<img src="~/Image/App4.jpg" alt="Photo" height="750" width="650">
+
+	<div class="Desc4" runat="server">
+		<text>
+			The example is shown when one of the articles is clicked or tapped.The user will be directed to a new page
+			where a summarised version of the article can be read in bullet points.
+		</text>
+	</div>
+
+</body>
+</html>

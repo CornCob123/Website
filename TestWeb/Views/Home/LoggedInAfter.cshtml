@@ -1,0 +1,205 @@
+﻿@{
+    Layout = null;
+}
+@model TestWeb.Models.Customer
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+	<title></title>
+	<link href="~/Content/LoggedInAfter.css" rel="stylesheet" type="text/css " runat="server" />
+
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="Home">@Html.ActionLink("Home", "LoggedInAfter", "Home")</li>
+					<li class="IndexTab">@Html.ActionLink("ShoppingCart", "ShoppingCart", "Home")</li>
+					<li class="AboutTab">@Html.ActionLink("Payment", "Payment", "Home")</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<h2 class="w3-center"></h2>
+	<div id="Scroll" class="w3-content w3-display-container">
+		<img class="mySlides" src="~/Image/BagScrollDiv6.jpg" style="width:100vw;height: 50vh;">
+
+		<div class="text-block">
+			<h4>Bags</h4>
+			<p>Bags Galore</p>
+		</div>
+
+		<div class="Piccontainer">
+			<div id="Row1">
+				<img class="BagitemsPic" src="~/Image/Bag1.jpg" alt="bag1">
+
+				<div>
+
+					<b>Price:$39.99</b>
+					<form id="AddSC1" action="@Url.Action("LoggedInAfter","Home")" method="post">
+
+						<b>Quantity: </b> @Html.TextBox("Quantity", "Enter Quantity", new { style = "color:red; width:50%", htmlAttributes = new { @class = "form-control" } })
+						<button type="submit" name="btn" value="btn1" id="Login" class="btn btn-default" onclick="Store()">Add</button>
+					</form>
+				</div>
+
+				<img class="BagitemsPic" src="~/Image/bag2.jpg" alt="bag2">
+				<div>
+
+					<b>Price:$49.99</b>
+					<form id="AddSC1" action="@Url.Action("LoggedInAfter","Home")" method="post">
+
+						<b>Quantity: </b> @Html.TextBox("Quantity", "Enter Quantity", new { style = "color:red; width:50%", htmlAttributes = new { @class = "form-control" } })
+						<button type="submit" name="btn" value="btn2" id="Login" class="btn btn-default" onclick="Store()">Add</button>
+					</form>
+				</div>
+			</div>
+
+			<div id="Row2">
+				<img class="BagitemsPic" src="~/Image/bag3.jpg" alt="bag3">
+
+				<div>
+
+					<b>Price:$59.99</b>
+					<form id="AddSC1" action="@Url.Action("LoggedInAfter","Home")" method="post">
+
+						<b>Quantity: </b> @Html.TextBox("Quantity", "Enter Quantity", new { style = "color:red", htmlAttributes = new { @class = "form-control" } })
+						<button type="submit" name="btn" value="btn3" id="Login" class="btn btn-default" onclick="Store()">Add</button>
+					</form>
+				</div>
+				<img class="BagitemsPic" src="~/Image/Bag4.jpg" alt="bag4">
+				<div>
+
+					<b>Price:$45.99</b>
+					<form id="AddSC1" action="@Url.Action("LoggedInAfter","Home")" method="post">
+
+						<b>Quantity: </b> @Html.TextBox("Quantity", "Enter Quantity", new { style = "color:red", htmlAttributes = new { @class = "form-control" } })
+						<button type="submit" name="btn" value="btn4" id="Login" class="btn btn-default" onclick="Store()">Add</button>
+					</form>
+				</div>
+			</div>
+
+			<div id="Row3">
+				<img class="BagitemsPic" src="~/Image/Bag11.jpg" alt="bag5" style="top:0">
+
+				<div id="Row3Item1">
+
+					<b>Price:$57.99</b>
+					<form id="AddSC1" action="@Url.Action("LoggedInAfter","Home")" method="post">
+
+						<b>Quantity: </b> @Html.TextBox("Quantity", "Enter Quantity", new { style = "color:red", htmlAttributes = new { @class = "form-glitch" } })
+						<button type="submit" name="btn" value="btn5" id="Login" class="btn btn-default" onclick="Store()">Add</button>
+					</form>
+				</div>
+				<img class="BagitemsPic" src="~/Image/Bag6.jpg" alt="bag6">
+				<div>
+
+					<b>Price:$37.99</b>
+					<form id="AddSC1" action="@Url.Action("LoggedInAfter","Home")" method="post">
+
+						<b>Quantity: </b> @Html.TextBox("Quantity", "Enter Quantity", new { style = "color:red", htmlAttributes = new { @class = "form-control" } })
+						<button type="submit" name="btn" value="btn6" id="Login" class="btn btn-default" onclick="Store()">Add</button>
+					</form>
+				</div>
+			</div>
+
+			<div id="Row4">
+				<img class="BagitemsPic" src="~/Image/Bag7.jpg" alt="bag7">
+
+				<div>
+
+					<b>Price:$38.99</b>
+					<form id="AddSC1" action="@Url.Action("LoggedInAfter","Home")" method="post">
+
+						<b>Quantity: </b> @Html.TextBox("Quantity", "Enter Quantity", new { style = "color:red", htmlAttributes = new { @class = "form-control" } })
+						<button type="submit" name="btn" value="btn7" id="Login" class="btn btn-default" onclick="Store()">Add</button>
+					</form>
+				</div>
+				<img class="BagitemsPic" src="~/Image/Bag8.jpg" alt="bag8">
+				<div>
+
+					<b>Price:$54.99</b>
+					<form id="AddSC1" action="@Url.Action("LoggedInAfter","Home")" method="post">
+
+						<b>Quantity: </b> @Html.TextBox("Quantity", "Enter Quantity", new { style = "color:red", htmlAttributes = new { @class = "form-control" } })
+						<button type="submit" name="btn" value="btn8" id="Login" class="btn btn-default" onclick="Store()">Add</button>
+					</form>
+				</div>
+			</div>
+			<div id="Row5">
+				<img class="BagitemsPic" src="~/Image/Bag9.jpg" alt="bag9">
+
+				<div>
+
+					<b>Price:$50.99</b>
+					<form id="AddSC1" action="@Url.Action("LoggedInAfter","Home")" method="post">
+
+						<b>Quantity: </b> @Html.TextBox("Quantity", "Enter Quantity", new { style = "color:red", htmlAttributes = new { @class = "form-control" } })
+						<button type="submit" name="btn" value="btn9" id="Login" class="btn btn-default" onclick="Store()">Add</button>
+					</form>
+				</div>
+				<img class="BagitemsPic" src="~/Image/Bag10.jpg" alt="bag10">
+				<div>
+
+					<b>Price:$40.99</b>
+					<form id="AddSC1" action="@Url.Action("LoggedInAfter","Home")" method="post">
+
+						<b>Quantity: </b> @Html.TextBox("Quantity", "Enter Quantity", new { style = "color:red", htmlAttributes = new { @class = "form-control" } })
+						<button type="submit" name="btn" value="btn10" id="Login" class="btn btn-default" onclick="Store()">Add</button>
+					</form>
+				</div>
+			</div>
+
+			<label>@ViewBag.Message</label>
+
+
+
+		</div>
+
+	</div>
+
+
+		<script>
+
+			function Store() {
+
+
+			}
+		</script>
+		<script>
+			var slideIndex = 1;
+			showDivs(slideIndex);
+
+					function plusDivs(n) {
+				showDivs(slideIndex += n);
+			}
+
+					function showDivs(n) {
+						var i;
+			var x = document.getElementsByClassName("mySlides");
+						if (n > x.length) {slideIndex = 1}
+			if (n < 1) {slideIndex = x.length}
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			x[slideIndex - 1].style.display = "block";
+		}
+	</script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,104 @@
+﻿@{
+	ViewBag.Title = "Cartooniser";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+@*
+	Add <link href="~/Content/AboutStyleSheet.css" rel="stylesheet" type="text/css " media="screen" runat="server" /> for pathing to CSS file
+	Add runat="server" to the head tag to enable CSS
+	Add runat="server" to the linkhref tag to enable CSS
+*@
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<meta name="viewport" content="width=device-width" />
+	<title>Cartooniser</title>
+	<link href="~/Content/CartooniserStyleSheet.css" rel="stylesheet" type="text/css " runat="server" />
+
+</head>
+<body>
+	<div class="container">
+		<section>
+			<b> Cartooniser and photo cropping application</b>
+		</section>
+
+		<img src="~/Image/Cartooniser2.png" alt="Photo" height="150" width="250">
+		<img src="~/Image/Cartooniser3.png" alt="Photo" height="150" width="250">
+		<img src="~/Image/Cartooniser5.png" alt="Photo" height="150" width="250">
+	</div>
+
+	<div class="Desc" runat="server">
+		<text>
+			Above is a cartooniser application made using java.It uses colour segmentation method using k-means algorithm
+			Above is a result of a photo with a 6 colour segmentation.the k means clustering method
+			will cartoonise a picture it may result in a colour segmentation of 4 to 8.
+			The higher the colour segmentation the more detailed the picture will be.
+			The maximum colour segmentation that I have applied is 8.
+		</text>
+	</div>
+	<img src="~/Image/Cartooniser6.png" alt="Photo" height="750" width="650">
+
+	<div class="Desc1" runat="server">
+		<text>
+			Another feature of this app is a photo cropping ability using lines to mark the borders and then the image will
+			be cropped out of the original image.The above show a line being drawn in orange on the picture.It uses a click
+			from one point to another to form straight lines.
+		</text>
+	</div>
+	<img src="~/Image/Cartooniser4.png" alt="Photo" height="750" width="650">
+
+	<div class="Desc2" runat="server">
+		<text>
+			By double clicking on the image on the bottom right, straight lines will be drawn.
+			Connect all the lines until the starting point to avoid any glitches.The lines must be fully connected to form
+			the area which is intended to be cropped.
+		</text>
+	</div>
+
+	<img src="~/Image/Cartooniser7.png" alt="Photo" height="750" width="650">
+
+	<div class="Desc3" runat="server">
+		<text>
+			2 clicks are input and a line is drawn
+		</text>
+	</div>
+
+
+	<img src="~/Image/Cartooniser8.png" alt="Photo" height="750" width="650">
+
+	<div class="Desc4" runat="server">
+		<text>
+			After highlighting the area (making sure that it is fully connected to the start point) ,click on crop button
+			to crop out the highlighted part of the image.The following  picture will result.
+		</text>
+	</div>
+	<img src="~/Image/Cartooniser10.png" alt="Photo" height="750" width="650">
+	<img src="~/Image/Cartooniser11.png" alt="Photo" height="750" width="650">
+
+	<div class="Desc5" runat="server">
+		<text>
+			Now Groot is cut out from the picture. To further refine and to get rid of unwanted spaces it is necessery to
+			use the eraser function to erase off the areas that you do not need.
+		</text>
+	</div>
+	<img src="~/Image/Cartooniser12.png" alt="Photo" height="750" width="650">
+	<img src="~/Image/Cartooniser13.png" alt="Photo" height="750" width="650">
+
+	<div class="Desc6" runat="server">
+		<text>
+			Next click the eraser button and drag and hold the left mouse click to wipe away any unwanted background
+			from the cropped image
+		</text>
+	</div>
+	<img src="~/Image/Cartooniser14.png" alt="Photo" height="750" width="650">
+	<img src="~/Image/Cartooniser15.png" alt="Photo" height="750" width="650">
+
+	<div class="Desc6" runat="server">
+		<text>
+			Above is fully cropped out Groot that can be used and transformed for other designs.
+		</text>
+	</div>
+
+</body>
+</html>

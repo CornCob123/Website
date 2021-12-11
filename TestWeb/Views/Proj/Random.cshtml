@@ -1,0 +1,34 @@
+﻿
+
+@model TestWeb.ViewModels.ProjViewModel
+@{
+	//Title of page
+	//model TestWeb.Models.Proj
+	ViewBag.Title = "Random";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*
+This is a comment on 
+on multiple lines
+*@
+
+@{ 
+	var className = Model.Customer.Count > 5 ? "Popular" : null;
+
+}
+<h2 class="@className"> @Model.Proj.Name</h2>
+
+@if(Model.Customer.Count==0){
+<text> No one has seen this project yet</text>
+}
+else{
+<ul>
+	@foreach (var customer in Model.Customer)
+	{
+
+		<li>@customer.Name</li>
+	}
+</ul>
+}
+

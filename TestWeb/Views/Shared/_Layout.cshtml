@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - My ASP.NET Application</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+	<link href="~/Content/LayoutStyleSheet.css" rel="stylesheet" type="text/css " runat="server" />
+
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				@Html.ActionLink("Resume page", "Index", "Home", null, new { @class = "navbar-brand" })
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="IndexTab">@Html.ActionLink("Home", "Index", "Home")</li>
+					<li class="AboutTab">@Html.ActionLink("About", "About", "Home")</li>
+					<li class="ContactTab">@Html.ActionLink("Contact", "Contact", "Home")</li>
+					<li class="ProjectTab">
+						@Html.ActionLink("Projects", "Projects", "Home")
+						<ul class="dropdownProj">
+							<li id="project1">@Html.ActionLink("Project1", "StockApp", "Home")</li>
+							<li id="project2">@Html.ActionLink("Project2", "Cartooniser", "Home")</li>
+							<li id="project3">@Html.ActionLink("Project3", "Projects", "Home")</li>
+						</ul>
+					</li>
+					<li class="ContactTab">@Html.ActionLink("Login", "Login", "Home")</li>
+					<li class="ContactTab">@Html.ActionLink("Register", "SignUp", "Home")</li>
+				</ul>
+					
+			</div>
+		</div>
+	</div>
+	
+
+
+	<div class="container body-content">
+		@RenderBody()
+
+		<hr />
+		<footer>
+			<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+		</footer>
+	</div>
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
+</body>
+</html>
